@@ -1,4 +1,5 @@
 import form.CreateFormService;
+import form.DeleteFormService;
 import person.CreatePersonService;
 import person.GetPersonService;
 import person.Person;
@@ -45,6 +46,7 @@ public class MenuService {
           createQuestions();
           break;
         case 4:
+          deleteQuestions();
           break;
         case 5:
           break;
@@ -103,5 +105,13 @@ public class MenuService {
     CreateFormService createFormService = new CreateFormService();
 
     createFormService.addQuestion(scanner.nextLine());
+  }
+
+  public void deleteQuestions(){
+    Scanner scanner = new Scanner(System.in);
+    System.out.println("Digite a questão que você deseja adicionar");
+    DeleteFormService deleteFormService = new DeleteFormService();
+
+    deleteFormService.deleteQuestion(scanner.nextInt());
   }
 }
