@@ -6,6 +6,11 @@ import java.util.List;
 
 public class DeleteFormService {
   public void deleteQuestion(int id){
+    if(id < 5){
+      System.out.println("Não é possivel apagar essa pergunta");
+      return;
+    }
+
     List<String> questions = new LinkedList<>();
 
     try(BufferedReader reader = new BufferedReader(new FileReader("form.txt"))){

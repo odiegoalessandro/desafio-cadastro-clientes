@@ -49,6 +49,7 @@ public class MenuService {
           deleteQuestions();
           break;
         case 5:
+          getPerson();
           break;
         case 99:
           System.out.println("Saindo...");
@@ -97,6 +98,14 @@ public class MenuService {
     GetPersonService getPersonService = new GetPersonService();
 
     getPersonService.getManyPersons();
+  }
+
+  public void getPerson(){
+    Scanner scanner = new Scanner(System.in);
+    GetPersonService getPersonService = new GetPersonService();
+
+    System.out.println("Digite o nome da pessoa a ser encontrada: ");
+    getPersonService.getPerson(scanner.nextLine());
   }
 
   public void createQuestions(){
